@@ -3,7 +3,27 @@ Loading the necessary packages
 
     library(knitr)
     library(dplyr)
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
     library(lubridate)
+
+    ## 
+    ## Attaching package: 'lubridate'
+
+    ## The following object is masked from 'package:base':
+    ## 
+    ##     date
+
     library(ggplot2)
 
 Loading and preprocessing the data
@@ -59,7 +79,7 @@ date:
       geom_histogram(fill = "purple", binwidth = 1000) +
       labs(title = "Histogram of Steps per day", x = "Steps per day", y = "Frequency")
 
-![](PA_files/figure-markdown_strict/unnamed-chunk-7-1.png)
+![](PA_files/figure-markdown_strict/unnamed-chunk-6-1.png)
 
 3.Calculate the mean and median of the total number of steps taken per
 day:
@@ -104,7 +124,7 @@ average steps taken:
     ggplot(interval, aes(x=interval, y=steps)) +
       geom_line(color = "purple")
 
-![](PA_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](PA_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
 1.  Use which.max() to find out the maximum steps, on average, across
     all the days:
@@ -199,7 +219,7 @@ No more missing values.
       geom_histogram(fill = "purple", binwidth = 1000) +
       labs(title = "Histogram of Steps per day, including missing values", x = "Steps per day", y = "Frequency")
 
-![](PA_files/figure-markdown_strict/unnamed-chunk-18-1.png)
+![](PA_files/figure-markdown_strict/unnamed-chunk-17-1.png)
 
 Calculating the mean and median steps with the filled in values:
 
@@ -259,7 +279,7 @@ whether the day is weekend or weekday:
       facet_wrap(~weektype, ncol = 1, nrow=2)
     print(s)
 
-![](PA_files/figure-markdown_strict/unnamed-chunk-23-1.png)
+![](PA_files/figure-markdown_strict/unnamed-chunk-22-1.png)
 
 From the two plots it seems that the test object is more active earlier
 in the day during weekdays compared to weekends, but more active
